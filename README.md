@@ -1,6 +1,6 @@
 # Nanovoltz Assignment
 
-> **Tech stack (initial):** Next.js · TypeScript · Tailwind CSS
+> **Tech stack (initial):** Next.js · TypeScript · Tailwind CSS, recharts
 
 ---
 
