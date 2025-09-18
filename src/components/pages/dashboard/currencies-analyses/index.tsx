@@ -25,11 +25,32 @@ const shibData = {
   change: 1.56,
 };
 
-const currencies_data = [
-  shibData,
-  shibData,
-  shibData,
-  shibData,
-  shibData,
-  shibData,
-];
+const ltcData = {
+  logo: "/solana_logo.png",
+  symbol: "LTC",
+  price: "$106.42",
+  change: 1.56,
+};
+
+const xrpData = {
+  logo: "/solana_logo.png",
+  symbol: "XRP",
+  price: "$0.8235",
+  change: 1.56,
+};
+
+const trxData = {
+  logo: "/solana_logo.png",
+  symbol: "TRX",
+  price: "$1.01",
+  change: 1.56,
+};
+
+const sushibData = {
+  logo: "/solana_logo.png",
+  symbol: "SUSHI",
+  price: "$2.642",
+  change: 1.56,
+};
+
+const currencies_data = [shibData, ltcData, xrpData, trxData, sushibData];
