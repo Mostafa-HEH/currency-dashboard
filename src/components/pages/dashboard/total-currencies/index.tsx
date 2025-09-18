@@ -1,3 +1,4 @@
+import ChartsTooltip from "@/components/ui/charts-tooltip";
 import Image from "next/image";
 import {
   CartesianGrid,
@@ -38,10 +39,16 @@ const TotalCurrencies = () => {
       </div>
       <ResponsiveContainer width="100%" height={250}>
         <LineChart data={data}>
+          <defs>
+            <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#f87171" stopOpacity={0.3} />
+              <stop offset="100%" stopColor="#f87171" stopOpacity={0} />
+            </linearGradient>
+          </defs>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
           <XAxis dataKey="month" axisLine={false} tickLine={false} />
           <YAxis hide />
-          <Tooltip content={<CustomTooltip />} cursor={false} />
+          <Tooltip content={<ChartsTooltip />} cursor={false} />
           <Line
             type="monotone"
             dataKey="value"
@@ -63,23 +70,3 @@ const TotalCurrencies = () => {
 
 export default TotalCurrencies;
 
-interface CustomTooltipProps {
-  active?: boolean;
-  payload?: Array<{
-    value: number;
-    payload: {
-      value: number;
-      dataKey: string;
-    };
-  }>;
-}
-const CustomTooltip = ({ active, payload }: CustomTooltipProps) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-[#0f172a] text-white px-2 py-1 rounded-lg shadow">
-        {payload[0].value}B
-      </div>
-    );
-  }
-  return null;
-};
