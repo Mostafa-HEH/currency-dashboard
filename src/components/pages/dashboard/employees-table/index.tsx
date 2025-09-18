@@ -205,7 +205,6 @@ export default function EmployeesTable() {
 
   return (
     <div className="bg-white">
-      {/* Custom Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200">
         <h1 className="text-xl font-semibold text-gray-900">Employees</h1>
         <div className="flex items-center space-x-2">

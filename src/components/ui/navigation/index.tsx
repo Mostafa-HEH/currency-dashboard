@@ -10,9 +10,11 @@ const Navigation = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <Logo />
-          <NavLinks />
+          <div className="hidden md:block">
+            <NavLinks />
+          </div>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="items-center space-x-4 hidden md:flex">
           <SearchInput />
           <User />
         </div>

@@ -30,7 +30,6 @@ const CurrencyVolume = () => {
 
   return (
     <div className="bg-white p-6 rounded-xl">
-      {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div>
           <p className="text-sm text-gray-500">Volume {activeRange}</p>
@@ -72,7 +71,7 @@ const CurrencyVolume = () => {
         </ResponsiveContainer>
       </div>
 
-      <div className="flex gap-6 mt-3 px-4">
+      <div className="gap-6 mt-3 px-4 hidden md:flex">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-green-500"></span>
           <span className="text-sm text-gray-600">Legend</span>

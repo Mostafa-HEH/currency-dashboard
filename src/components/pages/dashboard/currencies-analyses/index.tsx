@@ -2,15 +2,16 @@ import CurrencyRate from "@/components/ui/currency-rate";
 
 const CurrenciesAnalyses = () => {
   return (
-    <div className="bg-white p-6 rounded-xl grid grid-cols-6 gap-4">
+    <div className="bg-white p-6 rounded-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4">
       {currencies_data.map((currency, idx) => (
-        <CurrencyRate
-          key={idx}
-          logo={currency.logo}
-          symbol={currency.symbol}
-          price={currency.price}
-          change={currency.change}
-        />
+        <div key={idx} className="min-w-[240px]">
+          <CurrencyRate
+            logo={currency.logo}
+            symbol={currency.symbol}
+            price={currency.price}
+            change={currency.change}
+          />
+        </div>
       ))}
     </div>
   );
