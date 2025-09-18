@@ -53,21 +53,25 @@ const CurrencyVolume = () => {
         </div>
       </div>
 
-      {/* Chart */}
-      <ResponsiveContainer width="100%" height={250}>
-        <BarChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#eee" />
-          <XAxis dataKey="month" axisLine={false} tickLine={false} />
-          <YAxis hide />
-          <Tooltip
-            content={<ChartsTooltip />}
-            cursor={{ fill: "rgba(0,0,0,0.05)" }}
-          />
-          <Bar dataKey="value" fill="#fca5a5" radius={[4, 4, 0, 0]} />
-        </BarChart>
-      </ResponsiveContainer>
+      <div className="h-40 w-full">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data}>
+            <CartesianGrid
+              strokeDasharray="3 3"
+              vertical={false}
+              stroke="#eee"
+            />
+            <XAxis dataKey="month" axisLine={false} tickLine={false} />
+            <YAxis hide />
+            <Tooltip
+              content={<ChartsTooltip />}
+              cursor={{ fill: "rgba(0,0,0,0.05)" }}
+            />
+            <Bar dataKey="value" fill="#fca5a5" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
 
-      {/* Legends */}
       <div className="flex gap-6 mt-3 px-4">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-green-500"></span>
