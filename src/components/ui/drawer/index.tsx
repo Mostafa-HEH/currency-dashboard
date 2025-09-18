@@ -11,46 +11,42 @@ import {
 
 const Drawer = () => {
   return (
-    <div className="w-20 h-screen bg-gray-50 flex flex-col items-center py-6 space-y-4">
-      <div className="bg-pink-200 rounded-2xl p-4 hover:bg-pink-300 transition-colors cursor-pointer">
+    <div className="w-20 h-screen flex flex-col items-center py-6 space-y-4">
+      <div className="bg-[#FECACA] h-14 w-14 rounded-2xl cursor-pointer flex items-center justify-center">
         <Plus className="w-6 h-6 text-gray-800" />
       </div>
 
-      <div className="flex flex-col space-y-4">
-        <div className="p-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer">
-          <Home className="w-6 h-6 text-gray-600" />
-        </div>
+      <div className="flex flex-col my-auto gap-4">
+        {drawerLinks.map((link, idx) => {
+          const isActive = link.link === "/";
 
-        <div className="relative p-3 rounded-xl bg-pink-200 cursor-pointer">
-          <BarChart3 className="w-6 h-6 text-gray-800" />
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></div>
-        </div>
-
-        <div className="p-3 rounded-xl bg-gray-600 hover:bg-gray-700 transition-colors cursor-pointer">
-          <MessageCircle className="w-6 h-6 text-white" />
-        </div>
-
-        <div className="p-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer">
-          <Gamepad2 className="w-6 h-6 text-gray-600" />
-        </div>
-
-        <div className="relative p-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer">
-          <Users className="w-6 h-6 text-gray-600" />
-          <div className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-            <span className="text-white text-xs font-bold">9</span>
-          </div>
-        </div>
-
-        <div className="p-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer">
-          <Settings className="w-6 h-6 text-gray-600" />
-        </div>
-
-        <div className="p-3 rounded-xl hover:bg-gray-200 transition-colors cursor-pointer">
-          <MoreHorizontal className="w-6 h-6 text-gray-600" />
-        </div>
+          return (
+            <div
+              key={idx}
+              className={`w-14 h-14 rounded-full cursor-pointer hover:bg-[#FEE2E2] transition-colors relative ${
+                isActive ? "bg-[#FEE2E2]" : ""
+              } flex items-center justify-center`}
+            >
+              <link.icon className="w-6 h-6 text-[#475569]" />
+              {link?.notification > 0 && (
+                <div className="absolute -top-0.5 -right-0.5 w-3 h-3 bg-red-500 rounded-full" />
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
 };
 
 export default Drawer;
+
+const drawerLinks = [
+  { icon: Home, notification: 0, link: "#" },
+  { icon: BarChart3, notification: 2, link: "/" },
+  { icon: MessageCircle, notification: 0, link: "#" },
+  { icon: Gamepad2, notification: 0, link: "#" },
+  { icon: Users, notification: 9, link: "#" },
+  { icon: Settings, notification: 0, link: "#" },
+  { icon: MoreHorizontal, notification: 0, link: "#" },
+];
