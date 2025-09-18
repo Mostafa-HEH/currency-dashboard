@@ -9,9 +9,9 @@ const MainLayouts = ({
   return (
     <div className="bg-[#FEF2F2] min-h-[100dvh]">
       <Navigation />
-      <div className="flex">
+      <div className="flex h-[calc(100dvh-64px)]">
         <Drawer />
-        <div className="p-4 flex-1">{children}</div>
+        <div className="p-4 flex-1 overflow-auto">{children}</div>
       </div>
     </div>
   );
