@@ -7,7 +7,7 @@ const MainLayouts = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className="bg-[#FEF2F2] min-h-[100dvh]">
+    <div className="bg-[#FEF2F2] h-screen flex flex-col overflow-hidden">
       <Navigation />
       <div className="flex h-[calc(100dvh-64px)]">
         <Drawer />
