@@ -4,7 +4,7 @@ const NavLinks = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
 
   return (
-    <ul className="flex items-center space-x-6">
+    <ul className="flex md:items-center space-x-6 flex-col md:flex-row">
       {navigationItems.map((item) => {
         const isActive = activeTab === item.name;
         return (
