@@ -10,7 +10,7 @@ A production-ready cryptocurrency dashboard application built with **Next.js**, 
 
 **Target outcome:** A clean, well-structured Next.js application deployed to a public URL with complete source code and documentation.
 
-**Live Link:** nanovoltz-dashboard.vercel.app/
+**Live Link:** [currency dashboard](https://nano-currency-dashboard.vercel.app/)
 
 ---
 
