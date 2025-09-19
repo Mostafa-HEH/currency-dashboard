@@ -1,4 +1,4 @@
-# Nanovoltz Assignment
+# Currency Dashboard
 
 > **Tech stack:** Next.js · TypeScript · Tailwind CSS · Recharts · Lucide Icons · TanStack Table
 
